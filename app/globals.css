@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 1em;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-snap-points-y: repeat(3em);
+  animation: scroll 1s ease-out;
+}
+@layer base {
+  :root {
+    --main-bg: #000;
+    --main-text: #fff;
+    --primary: #689af8;
+    --fade: #999;
+    --shadow: #0f0f0f;
+  }
+  :root[data-theme="dark"] {
+    --main-bg: #000;
+    --main-text: #fff;
+    --primary: #689af8;
+    --fade-primary: #689af81d;
+    --fade: #999;
+    --shadow: #0f0f0f;
+  }
+  :root[data-theme="light"] {
+    --main-bg: #ffffff;
+    --main-text: #000;
+    --primary: #1968fd;
+    --fade-primary: #1969fd49;
+    --fade: #666;
+    --shadow: #e2e2e2;
+  }
+}
+body {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  font-family: sans-serif;
+}
+.container {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 0 auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 992px; /* Reduced from 750px */
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px; /* Reduced from 970px */
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px; /* Reduced from 1170px */
+  }
+}
+.hero h1 {
+  @apply lg:text-[6rem] text-[4rem] sm:text-[5rem] md:text-[5.5rem] text-shadow;
+
+  z-index: 2;
+  letter-spacing: -0.7px;
+  line-height: 0.8em;
+  position: absolute;
+  top: 87px;
+}
+.hero h2 {
+  @apply lg:text-[6rem] text-[4rem] sm:text-[5rem] md:text-[5.5rem];
+  z-index: 100;
+  line-height: auto;
+  padding-top: 29px;
+  padding-bottom: 29px;
+  position: relative;
+}
+.hero h2 span {
+  background-color: var(--primary) !important;
+}
+.btn {
+  @apply pr-4 py-2 border-b border-b-primary mt-4 hover:pl-4 hover:bg-fadePrimary transition-all duration-500;
+}
+p {
+  @apply text-fade px-4 sm:text-lg text-justify font-light;
+  line-height: 24px !important;
+}
+.slider {
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -ms-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+}
+.caseOverLay {
+  @apply w-full h-full absolute top-[50%] pointer-events-none transition-all group-hover:top-0 left-0 flex items-end;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.4)
+  );
+}
+:root[data-theme="dark"] .caseOverLay {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+}
