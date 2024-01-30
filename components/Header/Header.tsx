@@ -7,7 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Curve from "./Curve";
 import NavItem from "./NavItem";
 import { IoMdClose } from "react-icons/io";
-import ThemeChanger from "../ThemeChanger";
+import dynamic from "next/dynamic";
+const ThemeChanger = dynamic(() => import("../ThemeChanger"), {
+  ssr: false,
+});
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const links = [
@@ -28,7 +31,7 @@ const Header = () => {
     <header className="bg-mainBg border-b border-b-shadow sticky top-0 z-40">
       <div className="container py-4 flex justify-between">
         <Image alt="logo" src="/logo.svg" width={40} height={60} />
-        <nav className="hidden  items-center gap-4">
+        <nav className="hidden lg:flex  items-center gap-4">
           {links.map((link, indx) => (
             <Link
               key={indx}
@@ -45,7 +48,7 @@ const Header = () => {
           onClick={() => {
             setIsMenuOpen((prev) => !prev);
           }}
-          className="flex  items-center justify-center w-12 h-12 bg-fade rounded-full text-mainBg text-xl hover:scale-105 hover:bg-primary "
+          className="flex lg:hidden  items-center justify-center w-12 h-12 bg-fade rounded-full text-mainBg text-xl hover:scale-105 hover:bg-primary "
         >
           <FaBars />
         </button>
