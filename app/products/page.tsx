@@ -1,7 +1,6 @@
 import ProductBtn from "@/components/ProductBtn";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/data";
-import Image from "next/image";
 
 const ProductPage = () => {
   return (
@@ -9,7 +8,7 @@ const ProductPage = () => {
       <section className="container">
         <div className="flex flex-wrap gap-4 py-16 justify-center">
           {products.map((product, indx) => (
-            <ProductBtn product={product} key={indx} />
+            <ProductBtn product={product} key={indx} indx={indx} />
           ))}
         </div>
       </section>{" "}

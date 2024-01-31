@@ -11,6 +11,8 @@ const ScrollBtn: React.FC<ScrollBtnProps> = ({ value, id }) => {
   return (
     <button
       onClick={onClick}
+      data-aos="fade-up"
+      data-aos-duration="1000"
       className="btn lg:mx-0 mx-auto block w-fit relative z-10"
     >
       {value}

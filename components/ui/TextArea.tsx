@@ -5,7 +5,11 @@ interface TextareaProps {
 }
 const Textarea = ({ placeholder, label, name }: TextareaProps) => {
   return (
-    <div className="relative  w-full min-w-[200px]">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="750"
+      className="relative  w-full min-w-[200px]"
+    >
       <textarea
         required
         name={name}

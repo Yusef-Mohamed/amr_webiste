@@ -30,7 +30,11 @@ const ContactForm = () => {
 
   return (
     <section id="contact_form" className="py-12 container">
-      <h2 className="text-4xl font-semibold mb-6 text-center">
+      <h2
+        className="text-4xl font-semibold mb-6 text-center"
+        data-aos="fade-up"
+        data-aos-duration="750"
+      >
         Let&apos;s Talk?
       </h2>
 
@@ -46,6 +50,8 @@ const ContactForm = () => {
           <Input placeholder="Email" label="Email" name="email" />
           <Textarea placeholder="Message" label="Message" name="message" />
           <button
+            data-aos="fade-up"
+            data-aos-duration="1000"
             type="submit"
             className="border-b border-b-primary px-6 py-2 mx-auto block w-fit hover:bg-fadePrimary  transition-all"
           >
@@ -53,7 +59,11 @@ const ContactForm = () => {
           </button>
         </form>
         <div>
-          <div className="max-w-[300px] w-full aspect-square bg-mainText mx-auto relative">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="750"
+            className="max-w-[300px] w-full aspect-square bg-mainText mx-auto relative"
+          >
             <Image alt="contact" src="/contact_dark.png" fill />
           </div>
         </div>

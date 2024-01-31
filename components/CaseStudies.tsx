@@ -4,7 +4,11 @@ import Image from "next/image";
 const CaseStudies = () => {
   return (
     <section id="case_studies" className="container py-12">
-      <h2 className="text-4xl lg:text-5xl font-semibold">
+      <h2
+        className="text-4xl lg:text-5xl font-semibold"
+        data-aos="fade-up"
+        data-aos-duration="750"
+      >
         Case Studies
         <span className="text-primary text-2xl lg:text-3xl px-2">+</span>
       </h2>
@@ -12,6 +16,9 @@ const CaseStudies = () => {
         {caseStudies.map((caseStudy, idx) => (
           <div
             key={idx}
+            data-aos="fade-up"
+            data-aos-duration={`${750 + idx * 100}`}
+            data-aos-delay={`${idx * 100}`}
             className="aspect-[45/33] group relative rounded-xl overflow-hidden"
           >
             <Image alt={caseStudy.title} src={caseStudy.image} fill />

@@ -5,7 +5,11 @@ interface InputProps {
 }
 const Input = ({ placeholder, label, name }: InputProps) => {
   return (
-    <div className="relative h-11 w-full min-w-[200px]">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="750"
+      className="relative h-11 w-full min-w-[200px]"
+    >
       <input
         required
         name={name}

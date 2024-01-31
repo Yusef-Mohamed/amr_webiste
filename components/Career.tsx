@@ -5,17 +5,32 @@ const Career = () => {
   return (
     <section id="career" className="container py-12">
       <div className="flex justify-between flex-col  my-8 sm:flex-row items-center">
-        <h2 className="text-4xl lg:text-5xl font-semibold">
+        <h2
+          className="text-4xl lg:text-5xl font-semibold"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
           Career{" "}
           <span className="text-primary text-2xl lg:text-3xl px-2">+</span>
         </h2>
-        <a href="" className="btn flex items-center gap-16 ">
+        <a
+          href=""
+          className="btn flex items-center gap-16 "
+          data-aos="fade-up"
+          data-aos-duration="750"
+        >
           Get Cv <RiFileUserLine />
         </a>
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {careerPath.map((item, idx) => (
-          <div key={idx} className="relative pb-8 px-4">
+          <div
+            data-aos="fade-up"
+            data-aos-duration={`${750 + idx * 100}`}
+            data-aos-delay={`${idx * 100}`}
+            key={idx}
+            className="relative pb-8 px-4"
+          >
             <div className="absolute w-full h-2 border-l border-l-primary right-0 top-2" />
             <h4 className="text-2xl">{item.company}</h4>
             <h3 className="mb-2">{item.position}</h3>

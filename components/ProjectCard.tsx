@@ -10,6 +10,8 @@ const ProjectCard = ({ project, isShown }: IProjectCardProps) => {
   return (
     <Link
       href={project?.id ? `/projects/${project.id}` : "/"}
+      data-aos="fade-up"
+      data-aos-duration="800"
       className="w-full block cursor-pointer group  relative bg-shadow aspect-[1.4/1] rounded-xl overflow-hidden"
     >
       {isShown && (

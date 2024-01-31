@@ -59,49 +59,49 @@ export const projects: IProject[] = [
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
     description: "This is a project description",
     id: "1",
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
 ];
@@ -185,11 +185,11 @@ export const careerPath: ICareer[] = [
 ];
 export const caseStudies: ICaseStudy[] = [
   {
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
   {
-    image: "/projects/projectOne.png",
+    image: "/projects/projectOneImage.png",
     title: "Project 1",
   },
 ];

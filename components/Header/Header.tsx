@@ -2,17 +2,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaBars } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Curve from "./Curve";
 import NavItem from "./NavItem";
 import { IoMdClose } from "react-icons/io";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import dynamic from "next/dynamic";
 const ThemeChanger = dynamic(() => import("../ThemeChanger"), {
   ssr: false,
 });
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    Aos.init();
+  }, []);
   const links = [
     {
       name: "Portfolio",

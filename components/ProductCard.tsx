@@ -16,14 +16,28 @@ const ProductCard: React.FC<IProductCardProps> = ({ product, isOdd }) => {
         }  flex flex-col-reverse lg:flex-row container mx-auto items-center justify-center`}
       >
         <div className="lg:w-[50%] mx-4 productBg ">
-          <h2 className="text-3xl font-semibold my-8 text-gold text-center lg:text-start">
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="750"
+            className="text-3xl font-semibold my-8 text-gold text-center lg:text-start"
+          >
             {title}
             <span className="text-4xl ml-3 ">:</span>
           </h2>
-          <p className="text-xl py-6 ">{description}</p>
+          <p
+            data-aos-duration="1000"
+            data-aos="fade-up"
+            className="text-xl py-6 "
+          >
+            {description}
+          </p>
         </div>
         <div className="lg:w-[50%] ">
-          <div className=" max-w-[400px] aspect-[1.4/1] rounded-xl overflow-hidden mx-auto relative">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1250"
+            className=" max-w-[400px] aspect-[1.4/1] rounded-xl overflow-hidden mx-auto relative"
+          >
             <Image className="" alt={title} src={image} fill />
           </div>
         </div>

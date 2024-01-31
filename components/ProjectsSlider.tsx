@@ -4,6 +4,8 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { projects } from "@/data/data";
 import ProjectCard from "./ProjectCard";
+import Link from "next/link";
+import Image from "next/image";
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
@@ -51,25 +53,71 @@ const SwipeCarousel = () => {
 
   return (
     <section className="relative overflow-hidden py-16 border-y border-y-shadow">
-      <motion.div
-        drag="x"
-        dragConstraints={{
-          left: 0,
-          right: 0,
-        }}
-        style={{
-          x: dragX,
-          translateX: `-${currentIndex * 100}vw`,
-        }}
-        transition={SPRING_OPTIONS}
-        onDragEnd={onDragEnd}
-        className="flex cursor-grab slider items-center active:cursor-grabbing"
-      >
-        <Images currentIndex={currentIndex} />
-      </motion.div>
+      <div className="container lg:absolute top-16 left-[50%] lg:translate-x-[-50%]">
+        <h2
+          className="text-4xl  lg:text-5xl font-semibold z-[105]"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          Recent <br className="hidden lg:block" /> project{" "}
+          <span className="text-primary text-2xl lg:text-3xl px-2">+</span>
+        </h2>
+      </div>
 
-      <Dots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
-      <GradientEdges setCurrentIndex={setCurrentIndex} />
+      <div className="hidden lg:block">
+        <motion.div
+          drag="x"
+          dragConstraints={{
+            left: 0,
+            right: 0,
+          }}
+          style={{
+            x: dragX,
+            translateX: `-${currentIndex * 100}vw`,
+          }}
+          transition={SPRING_OPTIONS}
+          onDragEnd={onDragEnd}
+          className="flex cursor-grab slider items-center active:cursor-grabbing"
+        >
+          <Images currentIndex={currentIndex} />
+        </motion.div>
+
+        <Dots currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
+        <GradientEdges setCurrentIndex={setCurrentIndex} />
+      </div>
+      <div className="grid pt-16 md:grid-cols-2 container gap-4 lg:hidden">
+        {projects.map((project, idx) => (
+          <div
+            data-aos="fade-up"
+            data-aos-duration="750"
+            data-aos-delay={`${idx * 100}`}
+            key={idx}
+            className="bg-shadow group overflow-hidden rounded-xl"
+          >
+            <Link
+              href={project?.id ? `/projects/${project.id}` : "/"}
+              className="w-full block cursor-pointer group  relative bg-shadow aspect-[1.4/1] overflow-hidden"
+            >
+              <Image
+                alt={project.title}
+                className=" transition-all group-hover:scale-110 group-hover:rotate-3"
+                fill
+                src={project.image}
+              />
+            </Link>
+            <div className="p-6">
+              <h2 className="text-xl font-semibold">{project.title}</h2>
+              <p className="line-clamp-2 px-0 my-2">{project.description}</p>
+              <Link
+                href={project?.id ? `/projects/${project.id}` : "/"}
+                className="px-4 py-2 mt-4 mx-auto font-semibold block w-fit border-b-primary border-b  hover:bg-fadePrimary transition-all"
+              >
+                Details
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
