@@ -8,6 +8,13 @@ export interface IProject {
   image: string;
   id: string;
 }
+export interface IProduct {
+  title: string;
+  description: string;
+  image: string;
+  logo: string;
+  id: string;
+}
 export interface ICareer {
   date: string;
   company: string;

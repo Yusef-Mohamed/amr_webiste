@@ -3,7 +3,7 @@ import { motion, useMotionValue } from "framer-motion";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { useEffect, useState } from "react";
 import { projects } from "@/data/data";
-import Image from "next/image";
+import ProjectCard from "./ProjectCard";
 
 const ONE_SECOND = 1000;
 const AUTO_DELAY = ONE_SECOND * 10;
@@ -85,36 +85,19 @@ const Images = ({ currentIndex }: { currentIndex: number }) => {
             className="w-screen shrink-0 rounded-xl object-cover"
           >
             <div className="container grid grid-cols-2 items-center gap-4">
-              <div>
-                <div className="w-full relative bg-shadow aspect-[1.4/1] rounded-xl overflow-hidden">
-                  {projects.length > idx * 3 && (
-                    <Image
-                      alt={projects[idx * 3].title}
-                      fill
-                      src={projects[idx * 3].image}
-                    />
-                  )}
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="w-full relative bg-shadow aspect-[1.4/1] rounded-xl overflow-hidden">
-                  {projects.length > idx * 3 + 1 && (
-                    <Image
-                      alt={projects[idx * 3 + 1].title}
-                      fill
-                      src={projects[idx * 3 + 1].image}
-                    />
-                  )}
-                </div>
-                <div className="w-full relative bg-shadow aspect-[1.4/1] rounded-xl overflow-hidden">
-                  {projects.length > idx * 3 + 2 && (
-                    <Image
-                      alt={projects[idx * 3 + 2].title}
-                      fill
-                      src={projects[idx * 3 + 2].image}
-                    />
-                  )}
-                </div>
+              <ProjectCard
+                project={projects[idx * 3]}
+                isShown={projects.length > idx * 3}
+              />
+              <div className="space-y-4 ">
+                <ProjectCard
+                  project={projects[idx * 3 + 1]}
+                  isShown={projects.length > idx * 3 + 1}
+                />
+                <ProjectCard
+                  project={projects[idx * 3 + 2]}
+                  isShown={projects.length > idx * 3 + 2}
+                />
               </div>
             </div>
           </motion.div>

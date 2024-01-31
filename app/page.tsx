@@ -1,7 +1,9 @@
 import AboutMe from "@/components/AboutMe";
 import Career from "@/components/Career";
 import CaseStudies from "@/components/CaseStudies";
+import ContactForm from "@/components/ContactForm";
 import HeroSection from "@/components/HeroSection";
+import LetsWorkTogether from "@/components/LetsWorkTogether";
 import Process from "@/components/Process";
 import SkillSet from "@/components/SkillSet";
 import dynamic from "next/dynamic";
@@ -20,6 +22,8 @@ export default function Home() {
       <Career />
       <AboutMe />
       <CaseStudies />
+      <LetsWorkTogether />
+      <ContactForm />
     </>
   );
 }

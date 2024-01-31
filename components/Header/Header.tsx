@@ -20,7 +20,7 @@ const Header = () => {
     },
     {
       name: "Products",
-      link: "/",
+      link: "/products",
     },
     {
       name: "Company",
@@ -30,7 +30,15 @@ const Header = () => {
   return (
     <header className="bg-mainBg border-b border-b-shadow sticky top-0 z-40">
       <div className="container py-4 flex justify-between">
-        <Image alt="logo" src="/logo.svg" width={40} height={60} />
+        <Link href={"/"}>
+          <Image
+            alt="logo"
+            className="translate-y-1"
+            src="/logo.svg"
+            width={40}
+            height={30}
+          />
+        </Link>
         <nav className="hidden lg:flex  items-center gap-4">
           {links.map((link, indx) => (
             <Link

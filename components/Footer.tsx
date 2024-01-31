@@ -1,13 +1,12 @@
+import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="border-t  border-t-shadow">
-      <div className="container py-4 flex justify-between">
-        <p>
-          Codded by <a href="">Yousef</a>
-        </p>
-        <ul className=" w-fit flex mx-auto gap-6">
+      <div className="container py-4 flex justify-between items-center">
+        <Image alt="logo" src="/logo.svg" width={40} height={60} />
+        <ul className="flex gap-6">
           <li>
             <a
               href="#"
@@ -37,6 +36,16 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+      <p className="text-center py-2 border-t border-t-shadow">
+        Codded by{" "}
+        <a
+          href="https://wa.me/201207503648"
+          target="_blank"
+          className="font-semibold text-mainText hover:text-primary transition-all"
+        >
+          Yousef
+        </a>
+      </p>
     </footer>
   );
 };
