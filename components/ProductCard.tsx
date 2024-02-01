@@ -31,6 +31,14 @@ const ProductCard: React.FC<IProductCardProps> = ({ product, isOdd }) => {
           >
             {description}
           </p>
+          <Link
+            data-aos-duration="1250"
+            data-aos="fade-up"
+            className="btn mx-4 transition-all"
+            href={`/products/${id}`}
+          >
+            Learn More
+          </Link>
         </div>
         <div className="lg:w-[50%] ">
           <div
@@ -38,7 +46,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ product, isOdd }) => {
             data-aos-duration="1250"
             className=" max-w-[400px] aspect-[1.4/1] rounded-xl overflow-hidden mx-auto relative"
           >
-            <Image className="" alt={title} src={image} fill />
+            <Image className="" alt={title} src={image[0]} fill />
           </div>
         </div>
       </div>

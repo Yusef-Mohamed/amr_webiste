@@ -1,8 +1,8 @@
 "use client";
-import Input from "./ui/Input";
+import Input from "../ui/Input";
 import emailjs from "@emailjs/browser";
 import { FormEvent, useRef } from "react";
-import Textarea from "./ui/TextArea";
+import Textarea from "../ui/TextArea";
 import Image from "next/image";
 
 const ContactForm = () => {

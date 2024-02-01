@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
-const ScrollBtn = dynamic(() => import("./ScrollBtn"), { ssr: false });
+const ScrollBtn = dynamic(() => import("../ScrollBtn"), { ssr: false });
 
 const HeroSection = () => {
   return (

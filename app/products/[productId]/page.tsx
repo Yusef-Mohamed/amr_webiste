@@ -1,25 +1,25 @@
 import Slider from "@/components/Sliders/Slider";
-import { projects } from "@/data/data";
+import { products } from "@/data/data";
 import Image from "next/image";
 
-interface IProjectPageProps {
+interface IProductPageProps {
   params: {
-    projectId: string;
+    productId: string;
   };
 }
-const ProjectPage = ({ params }: IProjectPageProps) => {
-  const { projectId } = params;
-  const project = projects.find((project) => project.id === projectId);
+const ProductPage = ({ params }: IProductPageProps) => {
+  const { productId } = params;
+  const product = products.find((product) => product.id === productId);
   return (
     <section className="min-h-[90vh] py-12 overflow-hidden">
-      {project ? (
+      {product ? (
         <>
           <Slider
-            slidesCount={project.image.length}
+            slidesCount={product.image.length}
             withArrow={true}
             withDots={true}
           >
-            {project.image.map((item, idx) => (
+            {product.image.map((item, idx) => (
               <div key={idx} className="w-screen  shrink-0">
                 <div className="container aspect-[1.4/1] relative rounded-xl overflow-hidden">
                   <Image
@@ -34,18 +34,18 @@ const ProjectPage = ({ params }: IProjectPageProps) => {
           </Slider>
           <div className="container">
             <h2 className="text-4xl mt-8 lg:text-5xl font-semibold">
-              {project.title}
+              {product.title}
               <span className="text-primary text-2xl lg:text-3xl px-2">+</span>
             </h2>
-            <p className="text-lg mt-10">{project.description}</p>
-            {project.link && project.linkLabel && (
+            <p className="text-lg mt-10">{product.description}</p>
+            {product.link && product.linkLabel && (
               <a
-                href={project.link}
+                href={product.link}
                 target="_blank"
                 rel="noreferrer"
                 className="px-4 py-2 mt-4 mx-auto font-semibold block w-fit border-b-primary border-b  hover:bg-fadePrimary transition-all"
               >
-                {project.linkLabel}
+                {product.linkLabel}
               </a>
             )}
           </div>
@@ -57,4 +57,4 @@ const ProjectPage = ({ params }: IProjectPageProps) => {
   );
 };
 
-export default ProjectPage;
+export default ProductPage;

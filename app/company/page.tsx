@@ -1,21 +1,27 @@
 import AboutMe from "@/components/Sections/AboutMe";
 import Career from "@/components/Sections/Career";
 import CaseStudies from "@/components/Sections/CaseStudies";
+import CompanyMainSlider from "@/components/Sections/CompanyMainSlider";
 import ContactForm from "@/components/Sections/ContactForm";
-import HeroSection from "@/components/Sections/HeroSection";
 import LetsWorkTogether from "@/components/Sections/LetsWorkTogether";
 import Process from "@/components/Sections/Process";
 import SkillSet from "@/components/Sections/SkillSet";
-import ProjectSlider from "@/components/Sliders/ProjectsSlider";
 import dynamic from "next/dynamic";
+
+const ProjectsSlider = dynamic(
+  () => import("@/components/Sliders/ProjectsSlider"),
+  {
+    ssr: false,
+  }
+);
 
 export default function Home() {
   return (
     <>
-      <HeroSection />
+      <CompanyMainSlider />
       <SkillSet />
       <Process />
-      <ProjectSlider />
+      <ProjectsSlider />
       <Career />
       <AboutMe />
       <CaseStudies />

@@ -16,7 +16,7 @@ const ProjectCard = ({ project, isShown }: IProjectCardProps) => {
     >
       {isShown && (
         <>
-          <Image alt={project.title} fill src={project.image} />
+          <Image alt={project.title} fill src={project.image[0]} />
           <div className="caseOverLay">
             <h2 className="text-xl mb-20 px-4 ml-12 border-l-2 border-l-primary">
               {project.title}

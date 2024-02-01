@@ -29,7 +29,7 @@ const Header = () => {
     },
     {
       name: "Company",
-      link: "/",
+      link: "/company",
     },
   ];
   return (

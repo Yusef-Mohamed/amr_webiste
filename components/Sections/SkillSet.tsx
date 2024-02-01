@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-const ScrollBtn = dynamic(() => import("./ScrollBtn"), { ssr: false });
+const ScrollBtn = dynamic(() => import("../ScrollBtn"), { ssr: false });
 
 const SkillSet = () => {
   return (

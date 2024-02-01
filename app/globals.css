@@ -83,7 +83,13 @@ body {
   background-color: var(--primary) !important;
 }
 .btn {
-  @apply pr-4 py-2 border-b border-b-primary mt-4 hover:pl-4 hover:bg-fadePrimary transition-all duration-500;
+  @apply pr-4 py-2 border-b border-b-primary mt-4 hover:pl-4 hover:bg-fadePrimary transition-all;
+
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
 }
 p {
   @apply text-fade px-4 sm:text-lg text-justify font-light;

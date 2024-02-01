@@ -5,15 +5,19 @@ export interface IProcess {
 export interface IProject {
   title: string;
   description: string;
-  image: string;
+  image: string[];
   id: string;
+  link?: string;
+  linkLabel?: string;
 }
 export interface IProduct {
   title: string;
   description: string;
-  image: string;
+  image: string[];
   logo: string;
   id: string;
+  link?: string;
+  linkLabel?: string;
 }
 export interface ICareer {
   date: string;
