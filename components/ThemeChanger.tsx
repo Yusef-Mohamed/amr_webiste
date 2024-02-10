@@ -21,7 +21,6 @@ const ThemeChanger = () => {
 
   useEffect(() => {
     const theme = getSystemTheme();
-
     if (typeof window !== "undefined") {
       const currentTheme = localStorage.getItem("theme");
       if (currentTheme) {

@@ -7,7 +7,6 @@ import LetsWorkTogether from "@/components/Sections/LetsWorkTogether";
 import Process from "@/components/Sections/Process";
 import SkillSet from "@/components/Sections/SkillSet";
 import ProjectSlider from "@/components/Sliders/ProjectsSlider";
-import dynamic from "next/dynamic";
 
 export default function Home() {
   return (

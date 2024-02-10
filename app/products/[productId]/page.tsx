@@ -7,6 +7,10 @@ interface IProductPageProps {
     productId: string;
   };
 }
+export async function generateStaticParams() {
+  const paths = products.map(({ id }) => id);
+  return paths;
+}
 const ProductPage = ({ params }: IProductPageProps) => {
   const { productId } = params;
   const product = products.find((product) => product.id === productId);

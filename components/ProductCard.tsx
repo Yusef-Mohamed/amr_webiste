@@ -34,7 +34,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ product, isOdd }) => {
           <Link
             data-aos-duration="1250"
             data-aos="fade-up"
-            className="btn mx-4 transition-all"
+            className="btn mx-4 "
             href={`/products/${id}`}
           >
             Learn More

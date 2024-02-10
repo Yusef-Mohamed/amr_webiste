@@ -5,6 +5,7 @@ import {
   IProduct,
   IProject,
 } from "@/types/types";
+
 export const products: IProduct[] = [
   {
     description:
@@ -57,6 +58,9 @@ export const products: IProduct[] = [
     title: "Virtual Reality Experience",
   },
 ];
+
+/* ====================================== */
+
 export const projects: IProject[] = [
   {
     description: "This is a project description",
@@ -79,6 +83,9 @@ export const projects: IProject[] = [
     title: "Project 1",
   },
 ];
+
+/* ====================================== */
+
 export const processList: IProcess[] = [
   {
     title: "Project Initiation",
@@ -135,6 +142,9 @@ export const processList: IProcess[] = [
     ],
   },
 ];
+
+/* ====================================== */
+
 export const careerPath: ICareer[] = [
   {
     company: "MTN Nigeria",
@@ -157,6 +167,9 @@ export const careerPath: ICareer[] = [
     date: "Nov 2021- Present",
   },
 ];
+
+/* ====================================== */
+
 export const caseStudies: ICaseStudy[] = [
   {
     image: "/projects/projectOneImage.png",
@@ -167,6 +180,9 @@ export const caseStudies: ICaseStudy[] = [
     title: "Project 1",
   },
 ];
+
+/* ====================================== */
+
 export const companyImageSlider: string[] = [
   "/projects/projectOneImage.png",
   "/projects/projectOneImage.png",

@@ -1,11 +1,38 @@
 import Slider from "@/components/Sliders/Slider";
 import { projects } from "@/data/data";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface IProjectPageProps {
   params: {
     projectId: string;
   };
+}
+export async function generateMetadata({
+  params,
+}: IProjectPageProps): Promise<Metadata> {
+  const { projectId } = params;
+  const project = projects.find((project) => project.id === projectId);
+  if (!project)
+    return { title: "Project not found", description: "Project not found" };
+  return {
+    title: project.title,
+    description: project.description,
+    openGraph: {
+      images: [
+        {
+          url: project.image[0],
+          width: 800,
+          height: 600,
+          alt: project.title,
+        },
+      ],
+    },
+  };
+}
+export async function generateStaticParams() {
+  const paths = projects.map(({ id }) => id);
+  return paths;
 }
 const ProjectPage = ({ params }: IProjectPageProps) => {
   const { projectId } = params;
