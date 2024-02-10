@@ -1,5 +1,6 @@
 import Slider from "@/components/Sliders/Slider";
 import { projects } from "@/data/data";
+import { getUrlFromPath } from "@/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 
@@ -21,9 +22,7 @@ export async function generateMetadata({
     openGraph: {
       images: [
         {
-          url: project.image[0],
-          width: 800,
-          height: 600,
+          url: getUrlFromPath(project.image[0]),
           alt: project.title,
         },
       ],

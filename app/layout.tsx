@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import Header from "@/components/Header/Header";
 import { Analytics } from "@vercel/analytics/react";
 import { getUrlFromPath } from "@/utils";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: {
@@ -13,7 +14,14 @@ export const metadata: Metadata = {
   },
   description: "My company description",
   openGraph: {
-    url: getUrlFromPath("/opengraph-image.png"),
+    images: [
+      {
+        url: getUrlFromPath("/opengraph-image.png"),
+        width: 1200,
+        height: 630,
+        alt: "My company",
+      },
+    ],
   },
 };
 export default function RootLayout({
@@ -28,6 +36,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
