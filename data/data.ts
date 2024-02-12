@@ -72,13 +72,13 @@ export const projects: IProject[] = [
   },
   {
     description: "This is a project description",
-    id: "1",
+    id: "2",
     image: ["/projects/projectOneImage.png", "/projects/projectOneImage.png"],
     title: "Project 1",
   },
   {
     description: "This is a project description",
-    id: "1",
+    id: "3",
     image: ["/projects/projectOneImage.png", "/projects/projectOneImage.png"],
     title: "Project 1",
   },

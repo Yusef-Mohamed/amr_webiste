@@ -1,5 +1,7 @@
 import Slider from "@/components/Sliders/Slider";
 import { products } from "@/data/data";
+import { getUrlFromPath } from "@/utils";
+import { Metadata } from "next";
 import Image from "next/image";
 
 interface IProductPageProps {
@@ -10,6 +12,26 @@ interface IProductPageProps {
 export async function generateStaticParams() {
   const paths = products.map(({ id }) => id);
   return paths;
+}
+export async function generateMetadata({
+  params,
+}: IProductPageProps): Promise<Metadata> {
+  const { productId } = params;
+  const product = products.find((product) => product.id === productId);
+  if (!product)
+    return { title: "Project not found", description: "Project not found" };
+  return {
+    title: product.title,
+    description: product.description,
+    openGraph: {
+      images: [
+        {
+          url: getUrlFromPath(product.image[0]),
+          alt: product.title,
+        },
+      ],
+    },
+  };
 }
 const ProductPage = ({ params }: IProductPageProps) => {
   const { productId } = params;
