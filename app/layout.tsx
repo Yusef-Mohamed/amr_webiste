@@ -6,12 +6,14 @@ import Header from "@/components/Header/Header";
 import { Analytics } from "@vercel/analytics/react";
 import { getUrlFromPath } from "@/utils";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AnimatePresence } from "framer-motion";
 
 export const metadata: Metadata = {
   title: {
     default: "My company",
     template: "%s | My company",
   },
+  keywords: ["My company", "My company description"],
   description: "My company description",
   openGraph: {
     images: [
